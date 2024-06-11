@@ -30,7 +30,7 @@ export class CheckService implements CheckServiceUseCase {
 
       return true;
     } catch (error) {
-      const errorMessage = `${error}`;
+      const errorMessage = `${url} I NOT OK. ${error}`;
       const log = new LogEntity(errorMessage, LogSeverityLevel.high);
       this.logRepository.saveLog(log);
 
