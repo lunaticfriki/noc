@@ -1,9 +1,19 @@
+# Packages
 node_modules/
+
+# IDEs
 .vscode/
 .idea/
+
+#Testing
 coverage/
+
+#Build
 dist/
 
 # Logs
 .DS_Store
 logs/
+
+# Environment variables
+.env
