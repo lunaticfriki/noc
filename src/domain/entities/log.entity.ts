@@ -19,6 +19,7 @@ export class LogEntity {
 
   constructor(options: LogEntityOptions) {
     const { message, level, origin, createdAt = new Date() } = options;
+
     this.message = message;
     this.level = level;
     this.createdAt = createdAt;
