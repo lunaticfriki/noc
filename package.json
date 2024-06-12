@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsnd --respawn src/app.ts",
+    "dev": "tsnd --respawn src/app.ts --clear",
     "build": "rimraf ./dist && tsc",
     "start": "pnpm build && node dist/app.js"
   },
