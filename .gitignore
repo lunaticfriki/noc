@@ -17,3 +17,6 @@ logs/
 
 # Environment variables
 .env
+
+# Database
+mongo/
