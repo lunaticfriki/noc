@@ -24,8 +24,8 @@ export class Server {
     //   ).execute(url);
     // });
 
-    new SendEmailLogs(emailService, fileSystemLogRepository).execute(
-      'ovenor11@proton.me'
-    );
+    // new SendEmailLogs(emailService, fileSystemLogRepository).execute(
+    //   'ovenor11@proton.me'
+    // );
   }
 }

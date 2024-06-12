@@ -1,8 +1,5 @@
-import path from 'path';
 import nodemailer from 'nodemailer';
 import { envs } from '../../config/plugins/envs.plugin';
-import { LogRepository } from '../../domain/repository/log.repository';
-import { LogEntity, LogSeverityLevel } from '../../domain/entities/log.entity';
 
 interface SendEmailOptions {
   to: string | string[];
@@ -16,19 +13,8 @@ interface Attachment {
   path: string;
 }
 
-const okLog = new LogEntity({
-  level: LogSeverityLevel.low,
-  message: 'Email sent',
-  origin: path.basename(__filename),
-});
-
-const errorLog = new LogEntity({
-  level: LogSeverityLevel.high,
-  message: 'Email was not sent',
-  origin: path.basename(__filename),
-});
-
 export class EmailService {
+  // !!! hidden dependency
   private transporter = nodemailer.createTransport({
     service: envs.MAILER.SERVICE,
     auth: {
