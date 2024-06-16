@@ -7,9 +7,10 @@
     "dev": "tsnd --respawn src/app.ts --clear",
     "build": "rimraf ./dist && tsc",
     "start": "pnpm build && node dist/app.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "pnpm docker:test && jest",
+    "test:watch": "pnpm docker:test && jest --watch",
+    "test:coverage": "pnpm docker:test && jest --coverage",
+    "docker:test": "docker compose -f docker-compose.test.yml --env-file .env.test up -d"
   },
   "keywords": [
     "logger",
