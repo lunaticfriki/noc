@@ -13,7 +13,7 @@ export class CheckService implements CheckServiceUseCase {
   constructor(
     private readonly logRepository: LogRepository,
     private readonly successCallback: SuccessCallback,
-    private readonly errorCallback: ErrorCallback
+    private readonly errorCallback: ErrorCallback,
   ) {}
 
   public async execute(url: string): Promise<boolean> {
@@ -29,7 +29,7 @@ export class CheckService implements CheckServiceUseCase {
         level: LogSeverityLevel.low,
         origin: path.basename(__filename),
       });
-      this.logRepository.saveLog(log);
+      await this.logRepository.saveLog(log);
 
       this.successCallback && this.successCallback();
 
@@ -41,7 +41,7 @@ export class CheckService implements CheckServiceUseCase {
         level: LogSeverityLevel.high,
         origin: path.basename(__filename),
       });
-      this.logRepository.saveLog(log);
+      await this.logRepository.saveLog(log);
 
       this.errorCallback && this.errorCallback(errorMessage);
       return false;
