@@ -10,7 +10,7 @@ describe('envs.plugin test suite', () => {
         SERVICE: 'gmail',
       },
       PROD: false,
-      MONGO_URL: 'mongodb://lunaticfriki:123456@localhost:27017/',
+      MONGO_URL: 'mongodb://lunaticfriki:123456789@localhost:27017/',
       MONGO_DB_NAME: 'NOC_TEST',
       MONGO_USER: 'lunaticfriki',
       MONGO_PASS: '123456789',
