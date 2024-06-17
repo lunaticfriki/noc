@@ -34,4 +34,21 @@ describe('log.model test suite', () => {
       }),
     );
   });
+
+  it('should return the schema object', () => {
+    const schema = LogModel.schema.obj;
+
+    expect(schema).toMatchObject(
+      expect.objectContaining({
+        message: { type: expect.any(Function), required: true },
+        level: {
+          type: expect.any(Function),
+          enum: ['low', 'medium', 'high'],
+          default: 'low',
+        },
+        origin: { type: expect.any(Function) },
+        createdAt: expect.any(Object),
+      }),
+    );
+  });
 });
