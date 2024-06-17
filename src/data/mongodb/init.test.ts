@@ -18,7 +18,7 @@ describe('init mongoDB test suite', () => {
 
   it('should throw an error', async () => {
     try {
-      const connected = await MongoDatabase.connect({
+      await MongoDatabase.connect({
         dbName: process.env.MONGO_DB_NAME!,
         mongoUrl: 'mongodb://lunaticfriki:123456789@patata:27017/',
       });

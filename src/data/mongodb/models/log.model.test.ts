@@ -33,6 +33,8 @@ describe('log.model test suite', () => {
         createdAt: expect.any(Date),
       }),
     );
+
+    await LogModel.findByIdAndDelete(log.id);
   });
 
   it('should return the schema object', () => {
